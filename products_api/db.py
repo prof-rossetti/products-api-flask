@@ -1,13 +1,5 @@
-from flask import Flask, jsonify
-
-app = Flask(__name__)
-
-@app.route('/')
-def index():
-    return 'Products API (Flask)'
-
 #
-# PRODUCTS
+# PRODUCTS DATABASE
 #
 
 products = [
@@ -36,14 +28,3 @@ products = [
 def find_product(id):
     product = [product for product in products if product["id"] == id]
     return product
-
-# GET /products
-@app.route('/products')
-def list_products():
-    return jsonify(products)
-
-# GET /products/:id
-@app.route('/products/<int:id>') # @app.route('/products/<int:id>', methods=['GET'])
-def show_product(id):
-    product = find_product(id)
-    return jsonify(product)
