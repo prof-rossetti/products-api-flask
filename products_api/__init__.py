@@ -4,4 +4,4 @@ app = Flask(__name__)
 
 from products_api import routes
 
-app.run(debug=True)
+app.run # app.run(debug=True)

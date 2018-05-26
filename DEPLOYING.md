@@ -6,13 +6,11 @@ Install the heroku command-line utility (perhaps via `brew install heroku`), the
 
 ### Initializing a Heroku Server
 
-Then create and configure a new app server:
+Then create a new app server:
 
 ```sh
-heroku create --name=nyu-info-2335-products-api
+heroku create # then note your application's name
 ```
-
-
 
 ## Deploying
 
