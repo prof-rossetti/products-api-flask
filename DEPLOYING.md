@@ -15,3 +15,7 @@ heroku create --name=nyu-info-2335-products-api
 
 
 ## Deploying
+
+```sh
+git push heroku my_branch:master
+```
