@@ -30,5 +30,5 @@ pipenv shell
 Start a local webserver:
 
 ```sh
-FLASK_ENV=development flask run
+FLASK_APP=products_api FLASK_ENV=development flask run
 ```

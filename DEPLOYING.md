@@ -9,7 +9,7 @@ Install the heroku command-line utility (perhaps via `brew install heroku`), the
 Then create a new app server:
 
 ```sh
-heroku create # then note your application's name
+heroku create
 ```
 
 ## Deploying

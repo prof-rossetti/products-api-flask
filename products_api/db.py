@@ -26,5 +26,9 @@ products = [
 ] # based on data from Instacart: https://www.instacart.com/datasets/grocery-shopping-2017
 
 def find_product(id):
-    product = [product for product in products if product["id"] == id]
-    return product
+    matching_products = [product for product in products if product["id"] == id]
+    try:
+        matching_product = matching_products[0]
+    except IndexError as e:
+        matching_product = None
+    return matching_product

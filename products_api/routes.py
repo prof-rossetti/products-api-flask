@@ -1,5 +1,4 @@
-
-from flask import Flask, jsonify, render_template
+from flask import Flask, jsonify, render_template, flash, redirect, url_for
 
 from products_api import app
 from products_api.db import products, find_product
@@ -32,4 +31,9 @@ def list_products():
 @app.route('/products/<int:id>.json')
 def show_product(id):
     product = find_product(id)
-    return jsonify(product)
+    print(product)
+    if product == None:
+        flash("Oops, couldn't find a product with that identifier. Please try again.", "error")
+        return redirect(url_for('index'))
+    else:
+        return jsonify(product)
