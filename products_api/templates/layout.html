@@ -12,6 +12,7 @@
   </head>
   <body>
     <div id="alerts">
+      <!-- adapted from source: http://flask.pocoo.org/docs/1.0/patterns/flashing/#flashing-with-categories -->
       {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
           <ul class="flashes">
