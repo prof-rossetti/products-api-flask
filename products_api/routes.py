@@ -23,11 +23,13 @@ def hello(name=None):
 
 # GET /products
 @app.route('/products')
+@app.route('/products.json')
 def list_products():
     return jsonify(products)
 
 # GET /products/:id
-@app.route('/products/<int:id>') # @app.route('/products/<int:id>', methods=['GET'])
+@app.route('/products/<int:id>')
+@app.route('/products/<int:id>.json')
 def show_product(id):
     product = find_product(id)
     return jsonify(product)
