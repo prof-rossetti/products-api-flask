@@ -29,3 +29,8 @@
 
   + [Testing Flask API with Pytest](https://serge-m.github.io/testing-json-responses-in-Flask-REST-apps-with-pytest.html)
   + [Interactive Breakpoints](https://docs.pytest.org/en/latest/usage.html#setting-breakpoints)
+
+## Travis CI
+
+  + [Configuring a Python App](https://docs.travis-ci.com/user/languages/python/)
+  + [Badges](https://docs.travis-ci.com/user/status-images/)
