@@ -1,5 +1,5 @@
 import json
-import pytest
+import pytest # use pytest.set_trace() to drop an interactive breakpoint
 
 from products_api.app import app
 
