@@ -1,8 +1,11 @@
-from flask import Flask
+from dotenv import load_dotenv
+import os
 
-app = Flask(__name__)
-app.secret_key = 'my super secret' #todo: get from environment variable (and provide generation instructions)
+from products_api.app import app
+import products_api.routes
 
-from products_api import routes
+load_dotenv()
 
-app.run # app.run(debug=True)
+app.secret_key = os.getenv("SECRET_KEY") or "my super secret"
+
+app.run

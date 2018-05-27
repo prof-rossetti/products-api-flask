@@ -33,7 +33,7 @@ def show_product(id):
     product = find_product(id)
     print(product)
     if product == None:
-        flash("Oops, couldn't find a product with that identifier. Please try again.", "error")
+        flash( f"Oops, couldn't find a product with an identifier of {id}. Please try again.", "error")
         return redirect(url_for('index'))
     else:
         return jsonify(product)
