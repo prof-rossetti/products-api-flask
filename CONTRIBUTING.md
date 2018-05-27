@@ -32,3 +32,17 @@ Start a local webserver:
 ```sh
 FLASK_APP=products_api FLASK_ENV=development flask run
 ```
+
+## Testing
+
+All following commands assume you are running them from within a Pipenv virtual environment:
+
+```sh
+pipenv shell
+```
+
+Run tests:
+
+```sh
+pytest
+```
