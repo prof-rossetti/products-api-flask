@@ -1,7 +1,7 @@
 from flask import Flask, jsonify, render_template, flash, redirect, url_for, request
 
 from products_api import app
-from products_api.db import products, find_product
+from products_api.db import all_products, find_product
 
 #
 # HOME
@@ -28,6 +28,7 @@ def hello(name=None):
 @app.route('/products.json')
 def list_products():
     app.logger.info("LIST PRODUCTS")
+    products = all_products()
     return jsonify(products)
 
 # GET /products/:id
