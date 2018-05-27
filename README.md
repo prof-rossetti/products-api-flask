@@ -6,9 +6,11 @@ Use the read-only version of this API in production at https://nyu-info-2335-pro
 
 ### Endpoints
 
-  + GET /products
-  + GET /product/:id
+  + GET `/products`
+  + GET `/product/:id`
 
 ## [Contributing](/CONTRIBUTING.md)
 
 ## [Deploying](/DEPLOYING.md)
+
+## [License](/LICENSE.md)
