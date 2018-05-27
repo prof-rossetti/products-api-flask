@@ -20,5 +20,12 @@
 ## Python
 
   + [Relative Filepaths](https://stackoverflow.com/questions/918154/relative-paths-in-python)
-  + [Testing Flask API with Pytest](https://serge-m.github.io/testing-json-responses-in-Flask-REST-apps-with-pytest.html)
+
+## Pipenv
+
   + [Pipenv installing dev dependencies with `--dev`](https://docs.pipenv.org/basics/)
+
+## Pytest
+
+  + [Testing Flask API with Pytest](https://serge-m.github.io/testing-json-responses-in-Flask-REST-apps-with-pytest.html)
+  + [Interactive Breakpoints](https://docs.pytest.org/en/latest/usage.html#setting-breakpoints)

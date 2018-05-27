@@ -1,5 +1,5 @@
 import json
-import pytest
+import pytest # use pytest.set_trace() to drop an interactive breakpoint
 
 from products_api.app import app
 
@@ -18,12 +18,13 @@ def client(request):
 
 def test_index(client):
     response = client.get('/')
-    assert b'Products API (Flask)' in response.data
+    # assert b"Products API (Flask)" in response.data
+    assert "Products API (Flask)" in str(response.data)
 
 def test_hello(client):
     response = client.get('/hello')
-    assert b'Hello World' in response.data
+    assert "Hello World" in str(response.data)
 
 def test_hello_with_params(client):
-    response = client.get('/hello/Jordan')
-    assert b'Hello, Jordan' in response.data
+    response = client.get('/hello?name=Jordan')
+    assert "Hello, Jordan" in str(response.data)
