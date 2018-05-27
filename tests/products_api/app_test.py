@@ -36,7 +36,7 @@ def test_hello_with_params(client):
 
 def test_list_products(client):
     response = client.get('/products')
-    response_body = json.loads(response.data)
+    response_body = json.loads(response.data) # or response.get_json()
     assert response.status_code == 200
     assert isinstance(response_body, list)
     assert len(response_body) == 20
