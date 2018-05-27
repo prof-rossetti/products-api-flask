@@ -11,7 +11,7 @@ from products_api.db import all_products, find_product
 def index():
     return render_template('index.html')
 
-@app.route('/hello/')
+@app.route('/hello')
 @app.route('/hello/<name>')
 def hello(name=None):
     return render_template('hello.html', name=name)
