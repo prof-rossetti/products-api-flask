@@ -28,6 +28,8 @@ def test_hello_with_params(client):
 # PRODUCTS
 #
 
+# LIST PRODUCTS
+
 def test_list_products(client):
     response = client.get('/products')
     response_body = json.loads(response.data)
@@ -36,11 +38,24 @@ def test_list_products(client):
     assert len(response_body) == 20
     assert isinstance(response_body[0], dict)
 
+# SHOW PRODUCT
+
 def test_show_product(client):
     response = client.get('/products/1')
-    response_body = json.loads(response.data)
+    response_body = json.loads(response.data) # or response.get_json()
     attributes = list(response_body.keys())
     assert response.status_code == 200
     assert isinstance(response_body, dict)
     assert attributes == ["aisle", "department", "id", "name", "price"]
     assert int(response_body["id"]) == 1
+
+def test_show_product_failure_redirect(client):
+    response = client.get('/products/100', follow_redirects=False)
+    assert response.status_code == 302
+    assert response.location == "http://localhost/" # redirects to this URL
+    assert "You should be redirected automatically to target URL" in str(response.data)
+
+def test_show_product_failure_flash(client):
+    response = client.get('/products/100', follow_redirects=True)
+    assert response.status_code == 200
+    assert "Oops, couldn&#39;t find a product with an identifier of 100. Please try again." in str(response.data)
