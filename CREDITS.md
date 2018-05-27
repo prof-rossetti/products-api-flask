@@ -29,6 +29,7 @@
 
   + [Testing Flask API with Pytest](https://serge-m.github.io/testing-json-responses-in-Flask-REST-apps-with-pytest.html)
   + [Interactive Breakpoints](https://docs.pytest.org/en/latest/usage.html#setting-breakpoints)
+  + [Pipenv installing dev dependencies with `--dev`](https://docs.pipenv.org/basics/)
 
 ## Travis CI
 
