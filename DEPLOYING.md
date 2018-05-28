@@ -38,6 +38,12 @@ git push my_remote my_branch:master
 
 Uses an in-memory datastore, only supports read operations (i.e. "List Products" and "Show Product").
 
+To deploy:
+
+```sh
+git push heroku master
+```
+
 &nbsp; | &nbsp;
 --- | ---
 heroku app name: | `nyu-info-2335-products-api`
@@ -48,6 +54,12 @@ git branch name: | `master`
 ### Production (CSV)
 
 Uses a CSV file datastore, supports all operations.
+
+To deploy:
+
+```sh
+git push heroku-csv csv:master
+```
 
 &nbsp; | &nbsp;
 --- | ---
