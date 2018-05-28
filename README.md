@@ -2,90 +2,122 @@
 
 [![Build Status](https://travis-ci.com/prof-rossetti/products-api-flask.svg?branch=master)](https://travis-ci.com/prof-rossetti/products-api-flask)
 
-An example REST API, built in Python with the Flask  framework.
+An example REST API, built in Python with the Flask framework.
 
-Different branches of this repository contain different versions of this application. These different versions exist to illustrate differences in datastores.
+## API Documentation
 
-branch | heroku app | description
---- | --- | ---
-`master` | https://nyu-info-2335-products-api.herokuapp.com/ | Uses an in-memory datastore, only supports read operations (i.e. "List Products" and "Show Product").
-`csv` | https://nyu-info-2335-products-api-csv.herokuapp.com/ | Uses a CSV file datastore, supports all operations.
-
-## Usage
-
-### Endpoints
+### Products
 
 #### List Products
 
-Request:
-
     GET /products
+
+Example Request:
+
+```sh
+curl http://127.0.0.1:5000/products
+curl https://nyu-info-2335-products-api.herokuapp.com/products
+curl https://nyu-info-2335-products-api-csv.herokuapp.com/products
+```
 
 Example Response:
 
 ```json
 [
-  {"aisle":"cookies cakes","department":"snacks","id":1,"name":"Chocolate Sandwich Cookies","price":3.5},
-  {"aisle":"refrigerated","department":"beverages","id":11,"name":"Peach Mango Juice","price":1.99},
-  {"aisle":"juice nectars","department":"beverages","id":20,"name":"Pomegranate Cranberry & Aloe Vera Enrich Drink","price":4.25}
+  {"aisle":"cookies cakes", "department":"snacks", "id":1, "name":"Chocolate Sandwich Cookies", "price":3.5},
+  {"aisle":"refrigerated", "department":"beverages", "id":2, "name":"Peach Mango Juice", "price":1.99},
+  {"aisle":"juice nectars", "department":"beverages", "id":3, "name":"Pomegranate Cranberry & Aloe Vera Enrich Drink", "price":4.25}
 ]
 ```
 
 #### Show Product
 
-Request:
-
     GET /products/:id
+
+Example Request:
+
+```sh
+curl http://127.0.0.1:5000/products/1
+curl https://nyu-info-2335-products-api.herokuapp.com/products/1
+curl https://nyu-info-2335-products-api-csv.herokuapp.com/products/1
+```
 
 Example Response:
 
 ```json
 {
-  "aisle":"refrigerated",
-  "department":"beverages",
-  "id":11,
-  "name":"Peach Mango Juice",
-  "price":1.99
+  "aisle": "cookies cakes",
+  "department": "snacks",
+  "id": 1,
+  "name": "Chocolate Sandwich Cookies",
+  "price": 3.5
 }
 ```
 
-
 #### Create Product
-
-Request:
 
     POST /products
 
-Example Response:
+Example Request:
+
+```sh
+curl http://127.0.0.1:5000/products
+curl https://nyu-info-2335-products-api-csv.herokuapp.com/products
+```
+
+Example Response Body:
 
 ```json
-// todo
+{
+  "aisle": "pending assignment",
+  "department": "pending assignment",
+  "id": 4,
+  "name": "My New Product!",
+  "price": 100.00
+}
 ```
 
 #### Update Product
 
-Request:
-
     PUT /products/:id
 
-Response:
+Example Request:
+
+```sh
+curl http://127.0.0.1:5000/products/4
+curl https://nyu-info-2335-products-api-csv.herokuapp.com/products/4
+```
+
+Example Response Body:
 
 ```json
-// todo
+{
+  "aisle": "grains rice dried goods",
+  "department": "dry goods pasta",
+  "id": 4,
+  "name": "Organic Whole Wheat Pasta",
+  "price": 100.00
+}
 ```
 
 #### Destroy Product
 
-Request:
-
     DELETE /products/:id
 
-Example Response:
+Example Request:
 
-```json
-// todo
+```sh
+curl http://127.0.0.1:5000/products/4
+curl https://nyu-info-2335-products-api-csv.herokuapp.com/products/4
 ```
 
+Example Response Body:
+
+```json
+{
+  "message": "Deleted Successfully"
+}
+```
 
 ## [Contributing](/CONTRIBUTING.md)
 

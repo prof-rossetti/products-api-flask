@@ -29,5 +29,29 @@ heroku config:set SECRET_KEY="abc123"
 ## Deploying
 
 ```sh
-git push heroku my_branch:master
+git push my_remote my_branch:master
 ```
+
+## Deployment Environments
+
+### Production
+
+Uses an in-memory datastore, only supports read operations (i.e. "List Products" and "Show Product").
+
+&nbsp; | &nbsp;
+--- | ---
+heroku app name: | `nyu-info-2335-products-api`
+url: | https://nyu-info-2335-products-api.herokuapp.com/
+git remote name: | `heroku`
+git branch name: | `master`
+
+### Production (CSV)
+
+Uses a CSV file datastore, supports all operations.
+
+&nbsp; | &nbsp;
+--- | ---
+heroku app name: | `nyu-info-2335-products-api-csv`
+url: | https://nyu-info-2335-products-api-csv.herokuapp.com/
+git remote name: | `heroku-csv`
+git branch name: | `csv`
