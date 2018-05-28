@@ -54,6 +54,30 @@ Example Response:
 }
 ```
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #### Create Product
 
     POST /products
@@ -61,7 +85,11 @@ Example Response:
 Example Request:
 
 ```sh
-curl http://127.0.0.1:5000/products
+# -H "Content-Type: application/json"
+
+
+curl -X POST http://127.0.0.1:5000/products -d '{"aisle":"pending assignment", "department": "pending assignment", "name": "My New Product!", "price": "100.00"}'
+
 curl https://nyu-info-2335-products-api-csv.herokuapp.com/products
 ```
 
@@ -76,6 +104,13 @@ Example Response Body:
   "price": 100.00
 }
 ```
+
+
+
+
+
+
+
 
 #### Update Product
 
@@ -100,6 +135,13 @@ Example Response Body:
 }
 ```
 
+
+
+
+
+
+
+
 #### Destroy Product
 
     DELETE /products/:id
@@ -118,6 +160,35 @@ Example Response Body:
   "message": "Deleted Successfully"
 }
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## [Contributing](/CONTRIBUTING.md)
 
