@@ -17,6 +17,20 @@ def find_product(id):
         matching_product = None
     return matching_product
 
+def auto_incremented_id(products):
+    if len(products) == 0:
+        return 1
+    else:
+        product_ids = [int(p["id"]) for p in products]
+        return max(product_ids) + 1 # use the next available integer
+
+def is_valid_price(my_price):
+    try:
+        float(my_price)
+        return True
+    except Exception as e:
+        return False
+
 #
 # CSV FILE DATASTORE
 #
