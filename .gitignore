@@ -1,3 +1,6 @@
 .env
 .pytest_cache/
 products_api/__pycache__/
+products_api/db/products.csv
+products_api/db/products_development.csv
+products_api/db/products_test.csv

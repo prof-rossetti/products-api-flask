@@ -42,3 +42,19 @@ def show_product(id):
         return redirect(url_for('index'))
     else:
         return jsonify(product)
+
+# POST /products
+#@app.route('/products', methods=["POST"])
+#@app.route('/products.json', methods=["POST"])
+#def create_product():
+#    app.logger.info("CREATE PRODUCT")
+#    products = read_products_from_file()
+#
+#    new_product = request.args[""]
+#    if is_valid_price(new_product["price"]) == False:
+#        flash( f"Oops, couldn't find a product with an identifier of {id}. Please try again.", "error")
+#        return redirect(url_for('index'))
+#    else:
+#        products.append(new_product)
+#        write_products_to_file(products)
+#        return jsonify(new_product)
