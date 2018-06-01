@@ -1,5 +1,3 @@
-import pdb
-
 from products_api.db import reset_products_file
 
 # GET /products
@@ -8,7 +6,6 @@ def test_list_products(client):
     #setup:
     products = reset_products_file(filename="products.csv", from_filename="products_default.csv")
     assert len(products) == 20
-    #pdb.set_trace()
     #test:
     response = client.get('/products')
     response_body = response.get_json()
