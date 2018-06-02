@@ -1,7 +1,9 @@
 from flask import Flask, jsonify, render_template, flash, redirect, url_for, request
 import pytest
 
-from products_api import app
+from products_api import create_app
+app = create_app()
+
 from products_api.db import (
     all_products,
     find_product,
@@ -9,6 +11,7 @@ from products_api.db import (
     auto_incremented_id,
     write_products_to_file
 )
+
 
 #
 # HOME
