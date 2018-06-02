@@ -31,6 +31,9 @@ def is_valid_price(my_price):
 # CSV FILE DATASTORE
 #
 
+def products_csv_filename(app_env):
+    return f"products_{app_env}.csv"
+
 def read_products_from_file(filename="products_development.csv"):
     filepath = os.path.join(os.path.dirname(__file__), "db", filename)
     products = []
@@ -50,7 +53,11 @@ def write_products_to_file(products=[], filename="products_development.csv"):
             writer.writerow(product)
     return products
 
-def reset_products_file(from_filename="products_default.csv", filename="products_development.csv"):
+def reset_products_file(filename="products_development.csv", from_filename="products_empty.csv"):
     products = read_products_from_file(from_filename)
     new_products = write_products_to_file(products, filename)
     return new_products
+
+def seed_products_file(filename="products_development.csv", from_filename="products_default.csv"):
+    products = reset_products_file(filename=filename, from_filename=from_filename)
+    return products

@@ -4,11 +4,13 @@ import os
 
 from products_api.home_routes import home_routes
 from products_api.product_routes import product_routes
+from products_api.db import products_csv_filename
 
-load_dotenv()
+
 
 def create_app():
-    app_env= os.getenv("FLASK_ENV") or "development"
+    load_dotenv()
+    app_env=os.getenv("FLASK_ENV") or "development"
     csv_filename = f"products_{app_env}.csv"
     secret_key = os.getenv("SECRET_KEY") or "my super secret"
     testing = True if app_env == "test" else False
