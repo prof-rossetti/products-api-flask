@@ -20,7 +20,8 @@
 
 ## Flask REST APIs
 
-  + http://blog.luisrei.com/articles/flaskrest.html
+  + [Flask REST API Notes](http://blog.luisrei.com/articles/flaskrest.html)
+  + [HTTP Status Codes](http://www.restapitutorial.com/httpstatuscodes.html)
 
 ## Python
 
