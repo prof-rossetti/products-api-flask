@@ -50,34 +50,34 @@ def show_product(id):
     else:
         return jsonify(product)
 
+
+
+
+
+
+
+
+
+
+@app.errorhandler(400)
+def bad_request(message="Not Found"):
+    response = jsonify({"status": 400, "message": message})
+    response.status_code = 404
+    return response
+
+
+
+
+
+
 # POST /products
 @app.route('/products', methods=["POST"])
 @app.route('/products.json', methods=["POST"])
 def create_product():
     app.logger.info("CREATE PRODUCT")
-    #app.logger.info("HEADERS")
-    #app.logger.info(request.headers)
-    #app.logger.info("FORM")
-    #app.logger.info(request.form)
-    #app.logger.info("JSON DATA")
-    #json_data = request.get_json(force=True)
-    #app.logger.info(json_data)
-
-    ##pytest.set_trace()
-
-    #new_product = {
-    #    "name": request.form.get("name"),
-    #    "aisle": request.form.get("aisle"),
-    #    "department": request.form.get("department"),
-    #    "price": request.form.get("price")
-    #}
-    new_product = request.get_json()
-    app.logger.info("NEW PRODUCT")
-    app.logger.info(new_product)
-
+    new_product = request.get_json(force=True) # doesn't require request headers to specify content-type of json
     if is_valid_price(new_product["price"]) == False:
-        flash( f"OOPS. That product price ({new_product['price']}) is not valid. Expecting a price like 4.99 or 0.77. Please try again.", "error")
-        return redirect(url_for('index'))
+        return bad_request(message=f"OOPS. That product price ({new_product['price']}) is not valid. Expecting a price like 4.99 or 0.77. Please try again.")
     else:
         products = all_products()
         new_product["id"] = auto_incremented_id(products)

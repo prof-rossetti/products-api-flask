@@ -17,6 +17,10 @@
   + [Logging](http://flask.pocoo.org/docs/1.0/logging/)
   + [Testing](http://flask.pocoo.org/docs/1.0/testing/)
 
+## Flask REST APIs
+
+  + http://blog.luisrei.com/articles/flaskrest.html
+
 ## Python
 
   + [Relative Filepaths](https://stackoverflow.com/questions/918154/relative-paths-in-python)
