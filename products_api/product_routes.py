@@ -1,23 +1,9 @@
 from flask import Blueprint, current_app, flash, jsonify, redirect, request, url_for
 
 from products_api.db import read_products_from_file, find_product, write_products_to_file, is_valid_price, auto_incremented_id
+from products_api.error_handlers import not_found, bad_request
 
 product_routes = Blueprint('product_routes', __name__)
-
-@product_routes.errorhandler(400)
-def bad_request(message="Bad Request"):
-    response = jsonify({"status": 400, "message": message})
-    response.status_code = 400
-    return response
-
-@product_routes.errorhandler(404)
-def not_found(message="Not Found"):
-    response = jsonify({"status": 404, "message": message})
-    response.status_code = 404
-    return response
-
-
-
 
 # GET /products
 @product_routes.route('/products')
@@ -79,7 +65,7 @@ def update_product(id):
     write_products_to_file(products=products, filename=current_app.config["CSV_FILENAME"])
     return jsonify(edited_product)
 
-# PUT/POST /products/:id
+# DELETE /products/:id
 @product_routes.route('/products/<int:id>', methods=["DELETE"])
 @product_routes.route('/products/<int:id>.json', methods=["DELETE"])
 def destroy_product(id):

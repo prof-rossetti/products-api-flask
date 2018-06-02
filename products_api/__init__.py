@@ -3,7 +3,6 @@ from flask import Flask, jsonify
 import os
 
 from products_api.db import products_csv_filename
-#from products_api.error_handlers import error_handlers
 from products_api.home_routes import home_routes
 from products_api.product_routes import product_routes
 
@@ -20,13 +19,6 @@ def create_app():
 
     app.register_blueprint(home_routes)
     app.register_blueprint(product_routes)
-
-    #app.register_blueprint(error_handlers)
-    #@app.errorhandler(400)
-    #def bad_request(message="Not Found"):
-    #    response = jsonify({"status": 400, "message": message})
-    #    response.status_code = 400
-    #    return response
 
     return app
 
