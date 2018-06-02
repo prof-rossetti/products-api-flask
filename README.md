@@ -104,13 +104,6 @@ Example Response Body:
 }
 ```
 
-
-
-
-
-
-
-
 #### Destroy Product
 
     DELETE /products/:id
@@ -118,15 +111,15 @@ Example Response Body:
 Example Request:
 
 ```sh
-curl http://127.0.0.1:5000/products/4
-curl https://nyu-info-2335-products-api-csv.herokuapp.com/products/4
+curl -X DELETE http://127.0.0.1:5000/products/4
+curl -X DELETE https://nyu-info-2335-products-api-csv.herokuapp.com/products/4
 ```
 
 Example Response Body:
 
 ```json
 {
-  "message": "Deleted Successfully"
+  "message": "Product Deleted Successfully"
 }
 ```
 

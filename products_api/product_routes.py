@@ -78,3 +78,18 @@ def update_product(id):
     products[products.index(product)] = edited_product
     write_products_to_file(products=products, filename=current_app.config["CSV_FILENAME"])
     return jsonify(edited_product)
+
+# PUT/POST /products/:id
+@product_routes.route('/products/<int:id>', methods=["DELETE"])
+@product_routes.route('/products/<int:id>.json', methods=["DELETE"])
+def destroy_product(id):
+    current_app.logger.info(f"DESTROYING PRODUCT {id}")
+
+    products = read_products_from_file(current_app.config["CSV_FILENAME"])
+    product = find_product(id, products)
+    if product == None:
+        return not_found(message="OOPS. Couldn't find a product with that identifier ({id}). Please try again.")
+
+    del products[products.index(product)]
+    write_products_to_file(products=products, filename=current_app.config["CSV_FILENAME"])
+    return jsonify({"message": "Product Deleted Successfully"})
