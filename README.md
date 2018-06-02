@@ -78,30 +78,6 @@ Example Response Body:
 }
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #### Update Product
 
     PUT /products/:id
@@ -109,8 +85,11 @@ Example Response Body:
 Example Request:
 
 ```sh
-curl http://127.0.0.1:5000/products/4
-curl https://nyu-info-2335-products-api-csv.herokuapp.com/products/4
+curl -X PUT http://127.0.0.1:5000/products/4 -d '{"aisle":"grains rice dried goods", "department": "dry goods pasta", "name": "
+Organic Whole Wheat Pasta", "price": "2.50"}'
+
+curl -X PUT https://nyu-info-2335-products-api-csv.herokuapp.com/products/4 -d '{"aisle":"grains rice dried goods", "department": "dry goods pasta", "name": "
+Organic Whole Wheat Pasta", "price": "2.50"}'
 ```
 
 Example Response Body:
@@ -121,7 +100,7 @@ Example Response Body:
   "department": "dry goods pasta",
   "id": 4,
   "name": "Organic Whole Wheat Pasta",
-  "price": 100.00
+  "price": 2.50
 }
 ```
 
