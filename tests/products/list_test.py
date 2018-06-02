@@ -4,7 +4,7 @@ from products_api.db import reset_products_file
 
 def test_list_products(client):
     #setup:
-    products = reset_products_file(filename="products.csv", from_filename="products_default.csv")
+    products = reset_products_file(filename="products_test.csv", from_filename="products_default.csv")
     assert len(products) == 20
     #test:
     response = client.get('/products')
