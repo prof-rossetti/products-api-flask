@@ -2,29 +2,34 @@ from dotenv import load_dotenv
 from flask import Flask
 import os
 
+from products_api.routes import home_routes, product_routes
+
 load_dotenv()
 
-def create_app(app_env="special", csv_filepath="products_special.csv"):
+def create_app(csv_filename="products_special.csv"):
+    app_env= os.getenv("FLASK_ENV") or "special"
+    csv_filepath = os.path.join(os.path.dirname(__file__), "db", csv_filename)
+    secret_key = os.getenv("SECRET_KEY") or "my super special secret"
+    testing = True if app_env == "test" else False
 
     app = Flask(__name__, instance_relative_config=True)
-
-    print("APP INSTANCE PATH", app.instance_path)
-    app.logger.info(app.instance_path)
-
-    #app.secret_key = os.getenv("SECRET_KEY") or "my super secret"
-    #app.env = os.getenv("FLASK_ENV") or "special"
-
-    if app_env == "test": testing = True
-    else: testing = False
-
     app.config.from_mapping(
         ENV=app_env,
-        SECRET_KEY="my special secret",
+        SECRET_KEY=secret_key,
+        CSV_FILENAME=csv_filename,
         CSV_FILEPATH=csv_filepath,
         TESTING=testing
-        #DATABASE= os.path.join(app.instance_path, 'products_special.csv'),
     )
-
-    import products_api.routes
-
+    app.register_blueprint(home_routes)
+    app.register_blueprint(product_routes)
     return app
+
+
+
+
+
+
+
+if __name__ == "__main__":
+    app = create_app()
+    app.run()

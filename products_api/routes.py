@@ -1,8 +1,13 @@
-from flask import Flask, jsonify, render_template, flash, redirect, url_for, request
-import pytest
-
-from products_api import create_app
-app = create_app()
+from flask import (
+    Blueprint,
+    current_app,
+    flash,
+    jsonify,
+    render_template,
+    redirect,
+    request,
+    url_for
+)
 
 from products_api.db import (
     all_products,
@@ -12,19 +17,20 @@ from products_api.db import (
     write_products_to_file
 )
 
-
 #
 # HOME
 #
 
-@app.route('/')
+home_routes = Blueprint('home_routes', __name__)
+
+@home_routes.route('/')
 def index():
-    app.logger.info("INDEX")
+    current_app.logger.info("INDEX")
     return render_template('index.html')
 
-@app.route('/hello')
+@home_routes.route('/hello')
 def hello(name=None):
-    app.logger.info("HELLO")
+    current_app.logger.info("HELLO")
     if "name" in request.args:
         name = request.args["name"]
     return render_template('hello.html', name=name)
@@ -33,23 +39,25 @@ def hello(name=None):
 # PRODUCTS
 #
 
+product_routes = Blueprint('product_routes', __name__)
+
 # GET /products
-@app.route('/products')
-@app.route('/products.json')
+@product_routes.route('/products')
+@product_routes.route('/products.json')
 def list_products():
-    app.logger.info("LIST PRODUCTS")
+    current_app.logger.info("LIST PRODUCTS")
     products = all_products()
     return jsonify(products)
 
 # GET /products/:id
-@app.route('/products/<int:id>')
-@app.route('/products/<int:id>.json')
+@product_routes.route('/products/<int:id>')
+@product_routes.route('/products/<int:id>.json')
 def show_product(id):
-    app.logger.info(f"SHOW PRODUCT {id}")
+    current_app.logger.info(f"SHOW PRODUCT {id}")
     product = find_product(id)
     if product == None:
         flash( f"Oops, couldn't find a product with an identifier of {id}. Please try again.", "error")
-        return redirect(url_for('index'))
+        return redirect(url_for('home_routes.index'))
     else:
         return jsonify(product)
 
@@ -62,7 +70,7 @@ def show_product(id):
 
 
 
-@app.errorhandler(400)
+@product_routes.errorhandler(400)
 def bad_request(message="Not Found"):
     response = jsonify({"status": 400, "message": message})
     response.status_code = 404
@@ -74,10 +82,10 @@ def bad_request(message="Not Found"):
 
 
 # POST /products
-@app.route('/products', methods=["POST"])
-@app.route('/products.json', methods=["POST"])
+@product_routes.route('/products', methods=["POST"])
+@product_routes.route('/products.json', methods=["POST"])
 def create_product():
-    app.logger.info("CREATE PRODUCT")
+    current_app.logger.info("CREATE PRODUCT")
     new_product = request.get_json(force=True) # doesn't require request headers to specify content-type of json
     if is_valid_price(new_product["price"]) == False:
         return bad_request(message=f"OOPS. That product price ({new_product['price']}) is not valid. Expecting a price like 4.99 or 0.77. Please try again.")

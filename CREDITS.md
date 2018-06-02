@@ -16,6 +16,7 @@
   + [Flash Messaging](http://flask.pocoo.org/docs/1.0/patterns/flashing/)
   + [Logging](http://flask.pocoo.org/docs/1.0/logging/)
   + [Testing](http://flask.pocoo.org/docs/1.0/testing/)
+  + [Accessing Logger from a Blueprint](https://stackoverflow.com/questions/16994174/in-flask-how-to-access-app-logger-within-blueprint)
 
 ## Flask REST APIs
 
