@@ -62,7 +62,6 @@ Example Request:
 
 ```sh
 curl -X POST http://127.0.0.1:5000/products -d '{"aisle":"pending assignment", "department": "pending assignment", "name": "My New Product!", "price": "100.00"}'
-
 curl -X POST https://nyu-info-2335-products-api-csv.herokuapp.com/products -d '{"aisle":"pending assignment", "department": "pending assignment", "name": "My New Product!", "price": "100.00"}'
 ```
 
@@ -85,11 +84,8 @@ Example Response Body:
 Example Request:
 
 ```sh
-curl -X PUT http://127.0.0.1:5000/products/4 -d '{"aisle":"grains rice dried goods", "department": "dry goods pasta", "name": "
-Organic Whole Wheat Pasta", "price": "2.50"}'
-
-curl -X PUT https://nyu-info-2335-products-api-csv.herokuapp.com/products/4 -d '{"aisle":"grains rice dried goods", "department": "dry goods pasta", "name": "
-Organic Whole Wheat Pasta", "price": "2.50"}'
+curl -X PUT http://127.0.0.1:5000/products/4 -d '{"aisle":"grains rice dried goods", "department": "dry goods pasta", "name": "Organic Whole Wheat Pasta", "price": "2.50"}'
+curl -X PUT https://nyu-info-2335-products-api-csv.herokuapp.com/products/4 -d '{"aisle":"grains rice dried goods", "department": "dry goods pasta", "name": "Organic Whole Wheat Pasta", "price": "2.50"}'
 ```
 
 Example Response Body:
