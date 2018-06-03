@@ -45,3 +45,7 @@
 ## Curl
 
   + [Curl Examples](https://gist.github.com/subfuzion/08c5d85437d5d4f00e58)
+
+## Gunicorn
+
+  + [Invoking/Finding Flask App via init function](https://stackoverflow.com/questions/34478320/how-to-set-gunicorn-to-find-a-flask-application)

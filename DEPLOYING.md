@@ -24,9 +24,12 @@ Then store the value (e.g. "abc123") in an environment variable:
 
 ```sh
 heroku config:set SECRET_KEY="abc123"
+heroku config:set FLASK_ENV=production
 ```
 
 ## Deploying
+
+Deploy the source code:
 
 ```sh
 git push my_remote my_branch:master
@@ -59,6 +62,12 @@ To deploy:
 
 ```sh
 git push heroku-csv csv:master
+```
+
+Migrate/seed/reset the database as necessary:
+
+```sh
+heroku run "python products_api/seed.py"
 ```
 
 &nbsp; | &nbsp;
