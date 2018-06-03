@@ -67,7 +67,7 @@ git push heroku-csv csv:master
 Migrate/seed/reset the database as necessary:
 
 ```sh
-heroku run "python products_api/reset.py"
+heroku run "python products_api/reset.py" # or `heroku run bash` and run the commands manually...
 heroku run "python products_api/seed.py"
 ```
 

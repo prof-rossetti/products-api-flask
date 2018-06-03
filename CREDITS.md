@@ -49,3 +49,8 @@
 ## Gunicorn
 
   + [Invoking/Finding Flask App via init function](https://stackoverflow.com/questions/34478320/how-to-set-gunicorn-to-find-a-flask-application)
+
+## Heroku
+
+  + [Files get deleted](https://help.heroku.com/K1PPS2WM/why-are-my-file-uploads-missing-deleted)
+  + [Heroku ephemeral filesystem](https://devcenter.heroku.com/articles/dynos#ephemeral-filesystem)
