@@ -58,7 +58,7 @@ git branch name: | `master`
 
 Uses a CSV file datastore, supports all operations.
 
-> NOTE: Heroku's ephemeral file system will delete any file not included in the source repository, so attempts to create the `products_production.csv` file won't work when done either manually or during the deployment process. So this file needs to be checked in to the repository for the app to work in production.
+> NOTE: Heroku's ephemeral file system will delete any file not included in the source repository, so attempts to create the `products_production.csv` file won't work when done either manually or during the deployment process. So this file needs to be checked in to the repository for the app to work in production. And this means the file will get overwritten every time there is a deploy.
 
 To deploy:
 
