@@ -25,15 +25,15 @@ All following commands assume you are running them from within a Pipenv virtual 
 pipenv shell
 ```
 
-## Setup
+## Setup (CSV Version Only)
 
-Before you run this application for the first time (and anytime you want to clear all records from the database), reset the database:
+Before you run this application for the first time (and anytime you want to clear all records from the CSV file), reset the it:
 
 ```sh
 FLASK_ENV=development python3 products_api/reset.py
 ```
 
-Optionally populate, or "seed", the database with the default records:
+Optionally populate, or "seed", the file with the default records:
 
 ```sh
 FLASK_ENV=development python3 products_api/seed.py
