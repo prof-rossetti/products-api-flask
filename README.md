@@ -61,6 +61,30 @@ Example Response:
 }
 ```
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #### Create Product
 
     POST /products
@@ -68,8 +92,8 @@ Example Response:
 Example Request:
 
 ```sh
-curl -X POST http://127.0.0.1:5000/products -d '{"aisle":"pending assignment", "department": "pending assignment", "name": "My New Product!", "price": "100.00"}'
-curl -X POST https://groceries-api-csv.herokuapp.com/products -d '{"aisle":"pending assignment", "department": "pending assignment", "name": "My New Product!", "price": "100.00"}'
+curl -X POST http://127.0.0.1:5000/products -d '{"aisle":"pending assignment", "department": "pending assignment", "name": "My New Product!", "price": "2.50"}'
+curl -X POST https://groceries-api-csv.herokuapp.com/products -d '{"aisle":"pending assignment", "department": "pending assignment", "name": "My New Product!", "price": "2.50"}'
 ```
 
 Example Response Body:
@@ -80,9 +104,16 @@ Example Response Body:
   "department": "pending assignment",
   "id": 4,
   "name": "My New Product!",
-  "price": 100.00
+  "price": 2.50
 }
 ```
+
+
+
+
+
+
+
 
 #### Update Product
 
@@ -106,6 +137,13 @@ Example Response Body:
   "price": 2.50
 }
 ```
+
+
+
+
+
+
+
 
 #### Destroy Product
 

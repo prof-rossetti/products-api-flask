@@ -1,0 +1,2 @@
+
+# DELETE /products/:id
