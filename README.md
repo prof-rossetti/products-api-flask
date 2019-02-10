@@ -8,8 +8,8 @@ Deployment Environments:
 
 branch | production_url | description
 --- | --- | ---
-[`master`](https://github.com/prof-rossetti/products-api-flask) | https://____________________-products-api.herokuapp.com/ | A read-only version, using an in-memory datastore. Only supports the "List" and "Show" operations.
-[`csv`](https://github.com/prof-rossetti/products-api-flask/tree/csv) | https://____________________-products-api-csv.herokuapp.com/ | A fully-functional version, using a CSV file datastore. Supports all operations.
+[`master`](https://github.com/prof-rossetti/products-api-flask) | https://groceries-api-limited.herokuapp.com/ | A read-only version, using an in-memory datastore. Only supports the "List" and "Show" operations.
+[`csv`](https://github.com/prof-rossetti/products-api-flask/tree/csv) | https://groceries-api-csv.herokuapp.com/ | A fully-functional version, using a CSV file datastore. Supports all operations.
 
 
 ## API Documentation
