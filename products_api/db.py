@@ -5,6 +5,9 @@ import os
 # PRODUCTS DATABASE
 #
 
+def all_products():
+    return read_products_from_file()
+
 def find_product(id, all_products):
     matching_products = [product for product in all_products if int(product["id"]) == int(id)]
     try:

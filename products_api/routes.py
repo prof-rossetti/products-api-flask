@@ -36,7 +36,8 @@ def list_products():
 @app.route('/products/<int:id>.json')
 def show_product(id):
     app.logger.info(f"SHOW PRODUCT {id}")
-    product = find_product(id)
+    products = all_products()
+    product = find_product(id, products)
     if product == None:
         flash( f"Oops, couldn't find a product with an identifier of {id}. Please try again.", "error")
         return redirect(url_for('index'))
