@@ -11,7 +11,7 @@ Example Request:
 ```sh
 curl http://127.0.0.1:5000/products
 curl https://groceries-api-limited.herokuapp.com/products
-curl https://https://groceries-api-csv.herokuapp.com/products
+curl https://groceries-api-csv.herokuapp.com/products
 ```
 
 Example Response:

@@ -16,7 +16,7 @@ def test_show_product_failure_redirect(client):
     assert response.location == "http://localhost/" # redirects to this URL
     assert "You should be redirected automatically to target URL" in str(response.data)
 
-def test_show_product_failure_flash(client):
-    response = client.get('/products/100', follow_redirects=True)
-    assert response.status_code == 200
-    assert "Oops, couldn&#39;t find a product with an identifier of 100. Please try again." in str(response.data)
+# def test_show_product_failure_flash(client):
+#     response = client.get('/products/100', follow_redirects=True)
+#     assert response.status_code == 200
+#     assert "Oops, couldn&#39;t find a product with an identifier of 100. Please try again." in str(response.data)

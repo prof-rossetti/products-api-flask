@@ -1,4 +1,3 @@
-
 # GET /
 
 def test_index(client):
