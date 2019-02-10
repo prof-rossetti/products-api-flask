@@ -8,13 +8,7 @@
 
 ## Installation
 
-Download or clone the source code:
-
-```sh
-git clone git@github.com:prof-rossetti/products-api-flask.git
-```
-
-Navigate into the repository from the command-line:
+Download or clone the repository from [GitHub source](https://github.com/prof-rossetti/products-api-flask), then navigate to the repository from the command-line:
 
 ```sh
 cd products-api-flask/
@@ -34,6 +28,8 @@ pip install flask gunicorn python-dotenv
 ```
 
 ## Setup (CSV Version Only)
+
+> NOTE: this setup is only applicable on the "csv" branch.
 
 Before you run this application for the first time (and anytime you want to clear all records from the CSV file), reset the it:
 
