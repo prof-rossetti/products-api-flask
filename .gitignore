@@ -4,3 +4,6 @@ products_api/__pycache__/
 #products_api/db/products_production.csv
 products_api/db/products_development.csv
 products_api/db/products_test.csv
+
+tests/__pycache__/
+tests/products/__pycache__/

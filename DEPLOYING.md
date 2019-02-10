@@ -47,6 +47,12 @@ git push my_remote my_branch:master
 
 Uses an in-memory datastore, only supports read operations (i.e. "List Products" and "Show Product").
 
+To deploy:
+
+```sh
+git push heroku master
+```
+
 &nbsp; | &nbsp;
 --- | ---
 heroku app name: | `groceries-api-limited`
@@ -96,6 +102,6 @@ git push heroku-csv csv:master
 Migrate/seed/reset the database as necessary:
 
 ```sh
-heroku run "python products_api/reset.py" # or `heroku run bash` and run the commands manually...
+heroku run "python products_api/reset.py"
 heroku run "python products_api/seed.py"
 ```
