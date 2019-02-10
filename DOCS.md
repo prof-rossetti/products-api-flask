@@ -147,6 +147,6 @@ Example Response Body:
 
 ```json
 {
-  "message": "Deleted Successfully"
+  "message": "Product Deleted Successfully"
 }
 ```
