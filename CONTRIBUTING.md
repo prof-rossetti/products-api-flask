@@ -58,3 +58,5 @@ Run tests:
 ```sh
 pytest
 ```
+
+## [Deploying](/DEPLOYING.md)
