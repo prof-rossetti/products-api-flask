@@ -1,1 +1,1 @@
-web: gunicorn products_api:app
+web: gunicorn "products_api:create_app()"

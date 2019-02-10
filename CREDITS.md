@@ -29,8 +29,13 @@
 
   + [Testing Flask API with Pytest](https://serge-m.github.io/testing-json-responses-in-Flask-REST-apps-with-pytest.html)
   + [Interactive Breakpoints](https://docs.pytest.org/en/latest/usage.html#setting-breakpoints)
+  + [Fixture Functions and conftest.py](https://docs.pytest.org/en/3.6.0/fixture.html#conftest-py-sharing-fixture-functions)
 
 ## Travis CI
 
   + [Configuring a Python App](https://docs.travis-ci.com/user/languages/python/)
   + [Badges](https://docs.travis-ci.com/user/status-images/)
+
+## Curl
+
+  + [Curl Examples](https://gist.github.com/subfuzion/08c5d85437d5d4f00e58)
