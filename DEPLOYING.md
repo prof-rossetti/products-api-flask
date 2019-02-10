@@ -96,6 +96,30 @@ git push heroku-csv csv:master
 Migrate/seed/reset the database as necessary:
 
 ```sh
-heroku run "python products_api/reset.py" # or `heroku run bash` and run the commands manually...
+heroku run "python products_api/reset.py"
 heroku run "python products_api/seed.py"
 ```
+
+## Deployment Environments
+
+### Production
+
+Uses an in-memory datastore, only supports read operations (i.e. "List Products" and "Show Product").
+
+&nbsp; | &nbsp;
+--- | ---
+heroku app name: | `nyu-info-2335-products-api`
+url: | https://nyu-info-2335-products-api.herokuapp.com/
+git remote name: | `heroku`
+git branch name: | `master`
+
+### Production (CSV)
+
+Uses a CSV file datastore, supports all operations.
+
+&nbsp; | &nbsp;
+--- | ---
+heroku app name: | `nyu-info-2335-products-api-csv`
+url: | https://nyu-info-2335-products-api-csv.herokuapp.com/
+git remote name: | `heroku-csv`
+git branch name: | `csv`

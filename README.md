@@ -126,6 +126,13 @@ Example Response Body:
 }
 ```
 
+Example Response Body:
+
+```json
+{
+  "message": "Deleted Successfully"
+}
+```
 
 
 
