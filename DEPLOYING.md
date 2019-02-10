@@ -87,7 +87,7 @@ To setup remote address (one-time only):
 git remote add heroku-csv https://git.heroku.com/groceries-api-csv.git
 ```
 
-To deploy:
+To deploy the "csv" branch:
 
 ```sh
 git push heroku-csv csv:master
